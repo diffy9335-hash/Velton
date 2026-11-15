@@ -1,0 +1,71 @@
+{
+  "project": "VELTON",
+  "version": "0.9",
+  "build_date": "2026-11-15",
+  "source_type": "Off-line verified names/club engine with optional one-time 2026 historical bulk import (no packaged external large CSV)",
+  "data": {
+    "countries": 35,
+    "leagues_planned": 80,
+    "club_slots_target": 1504,
+    "club_records": 1453,
+    "leagues_with_clubs": 80,
+    "full_leagues": 59,
+    "partial_leagues": 21,
+    "empty_leagues": 0,
+    "named_real_players": 1070,
+    "clubs_with_named_players": 96,
+    "v06_new_club_records": 525,
+    "v06_new_league_sources": 25,
+    "v07_new_player_records": 97,
+    "v07_clubs_with_additions": 46,
+    "big_five_named_players": 636,
+    "big_five_clubs_with_named_players": 81,
+    "active_named_players_new_career": 1009,
+    "clubs_with_official_2026_27_first_teams": 29,
+    "official_2026_27_first_team_entries": 692,
+    "v08_new_player_records": 309,
+    "v08_reassigned_previous_player_records": 41,
+    "big_five_2026_27_verified_first_teams": {
+      "ENG_1": 20,
+      "ESP_1": 3,
+      "GER_1": 2,
+      "ITA_1": 2,
+      "FRA_1": 2
+    },
+    "big_five_named_players_eligible_in_new_slot": 887,
+    "big_five_verified_players": 692,
+    "clubs_without_named_players": 1358,
+    "clubs_with_at_least_20_named_players": 27,
+    "bulk_external_players_bundled": 0
+  },
+  "changes": [
+    "Expanded dated 2026/27 official first team rosters to 29 clubs across top-five leagues (all 20 EPL, 9 others)",
+    "309 additional unique real footballer records; 41 reassigned to more recent starter club without affecting old saves",
+    "Excluded stale historical player rows from newly created snapshots at verified clubs, retained historic rows for old slots",
+    "World roster endpoints now show exactly the eligible active named players and official provenance per verified club",
+    "Added authoritative URLs, offline roster audit, five-league coverage CSV, import idempotency and v0.7 migration regression test",
+    "Retained offline-only match simulation, game budgets, end season reports, independent saves and division movement",
+    "Added one-time historical static dcaribou CSV downloader/converter with club-ID review, global identity conflict audit and protection for 29 official 2026/27 squad snapshots",
+    "Added optional local FC26 CSV import (names, positions, club snapshot only) and documented licensing/age/season caveats",
+    "Added 35-country/80-league honest squad audit CSV/JSON and Mini App indicators of official vs historical/partial squads",
+    "Retained five isolated career snapshots, simulated transfers, table reset, promotion/relegation and season finish/retire choices"
+  ],
+  "tests": {
+    "pytest": "42 passed, 2026-11-15",
+    "javascript_syntax": "node --check static/app.js passed",
+    "bulk_external_dataset": "no large external dataset downloaded in this offline execution; local CSV fixture & integration tested",
+    "docker_image": "not built",
+    "telegram_production": "not tested",
+    "browser_ui": "existing light-blue UI retained; not independently browser tested for v0.9"
+  },
+  "limitations": [
+    "29 of 96 top-five clubs have verified 18–30-name first-team lists; 67 clubs still have partial/historic squads",
+    "Some official EPL registered senior lists exclude U21 players not requiring registration; not every player at a club is claimed",
+    "21 leagues remain partially filled and 51 of 1504 intended club entries missing",
+    "All simulated match outcomes and game economies are fictional; player names and starting affiliations are dated source facts",
+    "No runtime football API needed; internet/HTTPS is still necessary for Telegram Mini App",
+    "This release does not bundle downloaded 50,000 footballer dataset or claim all 1453 clubs have 20-30 real players",
+    "Bulk source ends 2026-07 and covers only part of the VELTON league universe; full 2026/27 roster verification still required",
+    "One-time download on an internet-connected machine requires explicit operator command, not football match API keys"
+  ]
+}
